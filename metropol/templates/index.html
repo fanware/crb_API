@@ -1,0 +1,69 @@
+{% load static %}
+{% csrf_token %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metropol API Interface</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body bgcolor="#b0c4de">
+
+    <!-- Container for the API Interface -->
+    <div class="api-container">
+        <h1>Metropol API Interface</h1>
+
+        <!-- Identity Verification Section -->
+        <section class="api-section">
+            <h2>Identity Verification</h2>
+            <form id="identityForm">
+                <label for="identity_id">ID Number:</label>
+                <input type="text" id="identity_id" placeholder="Enter ID number" required>
+                <button type="submit">Verify Identity</button>
+            </form>
+            <div id="identityResult" class="result"></div>
+        </section>
+
+        <!-- Delinquency Status Section -->
+        <section class="api-section">
+            <h2>Delinquency Status</h2>
+            <form id="delinquencyForm">
+                <label for="delinquency_id">ID Number:</label>
+                <input type="text" id="delinquency_id" placeholder="Enter ID number" required>
+                <label for="loan_amount">Loan Amount:</label>
+                <input type="number" id="loan_amount" placeholder="Enter loan amount" required>
+                <button type="submit">Check Delinquency Status</button>
+            </form>
+            <div id="delinquencyResult" class="result"></div>
+        </section>
+
+        <!-- Credit Info Section -->
+        <section class="api-section">
+            <h2>Credit Information</h2>
+            <form id="creditForm">
+                <label for="credit_id">ID Number:</label>
+                <input type="text" id="credit_id" placeholder="Enter ID number" required>
+                <label for="credit_loan_amount">Loan Amount:</label>
+                <input type="number" id="credit_loan_amount" placeholder="Enter loan amount" required>
+                <button type="submit">Get Credit Information</button>
+            </form>
+            <div id="creditResult" class="result"></div>
+        </section>
+
+        <!-- Consumer Score Section -->
+        <section class="api-section">
+            <h2>Consumer Score</h2>
+            <form id="consumerForm">
+                <label for="consumer_id">ID Number:</label>
+                <input type="text" id="consumer_id" placeholder="Enter ID number" required>
+                <button type="submit">Check Consumer Score</button>
+            </form>
+            <div id="consumerResult" class="result"></div>
+        </section>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
+
